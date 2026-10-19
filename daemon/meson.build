@@ -16,6 +16,9 @@ if installer_backend == 'distinst'
     vala_files += ['DistinstBackend.vala']
     daemon_dependencies += [distinst_dep]
     args += '--define=DISTINST_BACKEND'
+elif installer_backend == 'none'
+    vala_files += ['NoneBackend.vala']
+    args += '--define=NONE_BACKEND'
 else
     error('No supported installer backend provided')
 endif

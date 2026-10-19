@@ -32,8 +32,7 @@ installer_backend = get_option('installer_backend')
 if installer_backend == 'distinst'
     distinst_dep = dependency('distinst')
 elif installer_backend == 'none'
-    # Not-found placeholder so targets can still list distinst_dep harmlessly
-    distinst_dep = dependency('', required: false)
+    # No backend dependencies needed
 else
     error('No supported installer backend provided')
 endif
